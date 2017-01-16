@@ -1,22 +1,45 @@
-# Running Locally
+## Running Locally
 
-#### clone the repository
+1. #### clone the repository
 `git clone git@github.com:davidandrus/frontend-nanodegree-mobile-portfolio.git`
 
-#### cd into the folder that was just created
+2. #### cd into the folder that was just created
 `cd frontend-nanodegree-mobile-portfolio`
 
-#### install dependencies
+3. #### install dependencies
 `npm install`
 
-#### build the production assets
-`npm build`
+4. #### build the production assets
+`npm run build`
 
-#### Running the server
+5. #### run the server
 `npm start`
 
-#### Make available to the web
+## Make available to web
+
+1. #### Open new terminal
+2. #### cd into the folder created in Running Locally - step 1
+
+3. #### expose to internet
 `npm run ngrok`
+
+4. #### In a browser window open ngrok url
+
+  ```
+  Session Status                online
+  Version                       2.1.18
+  Region                        United States (us)
+  Web Interface                 http://127.0.0.1:4040
+  Forwarding                    http://bb7d56d0.ngrok.io -> localhost:8080
+  Forwarding                    https://bb7d56d0.ngrok.io -> localhost:8080
+
+  Connections                   ttl     opn     rt1     rt5     p50     p90
+                                0       0       0.00    0.00    0.00    0.00
+  ```
+So in the example above **http://bb7d56d0.ngrok.io**
+
+## Test in PageSpeed Insights
+https://developers.google.com/speed/pagespeed/insights
 
 # Optimizations Made
 
