@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server ./dist/",
-    "ngrok": "ngrok http 8080"
+    "ngrok": "ngrok http 8080",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,13 @@
   },
   "homepage": "https://github.com/davidandrus/frontend-nanodegree-mobile-portfolio#readme",
   "dependencies": {
-    "critical": "^0.8.1",
     "gulp": "^3.9.1",
     "gulp-cheerio": "^0.6.2",
     "gulp-clean-css": "^2.3.2",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
+    "gulp-inline-css": "^3.1.0",
     "http-server": "^0.9.0",
     "ngrok": "^2.2.4"
   }
