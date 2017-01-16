@@ -1,3 +1,6 @@
+## View on github pages
+https://davidandrus.github.io/frontend-nanodegree-mobile-portfolio/
+
 ## Running Locally
 
 1. #### clone the repository
