@@ -5,6 +5,7 @@ const cleanCSS = require('gulp-clean-css');
 const gulpIf = require('gulp-if');
 const inlineCSS = require('gulp-inline-css');
 const cheerio = require('gulp-cheerio');
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('copy', () => {
   // copy files
@@ -37,6 +38,7 @@ gulp.task('build', ['copy'], () => {
 
   gulp
     .src('src/**/*.css')
+    .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(gulp.dest('dist'));
 });
