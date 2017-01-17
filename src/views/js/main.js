@@ -520,10 +520,10 @@ function createAndUpdateMovers() {
   // clear if populated - happens during resize
   movingPizzas.innerHTML = '';
   var bodyWidth = document.body.offsetWidth;
-  var bodyHeight = document.body.offsetWidth;
+  var viewportHeight = window.innerHeight;
   var s = 256;
   var cols = 8
-  var rows = Math.ceil(bodyHeight / s)
+  var rows = Math.ceil(viewportHeight / s)
   var pizzaCount = rows * cols;
 
   for (var i = 0, elem; i < pizzaCount ; i++) {
