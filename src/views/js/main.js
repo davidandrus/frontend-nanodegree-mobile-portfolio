@@ -522,7 +522,7 @@ function createAndUpdateMovers() {
   var bodyWidth = document.body.offsetWidth;
   var bodyHeight = document.body.offsetWidth;
   var s = 256;
-  var cols = Math.ceil(bodyWidth / s);
+  var cols = 8
   var rows = Math.ceil(bodyHeight / s)
   var pizzaCount = rows * cols;
 
