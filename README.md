@@ -52,7 +52,7 @@ Added a build pipeline using gulp which does the following
 * runs all image assets through image minifier
 * minifies html
 * inlines all screen styles to prevent an unnecessary blocking
-* minifies all css
+* minifies and autoprefix all css
 
 Made manual edits to `index.html`
 * made google analytics script run async
@@ -60,7 +60,13 @@ Made manual edits to `index.html`
 * fixed issue where Cam's Pizza image was being included at a much larger size than was displayed by creating a smaller image at the display size `src/views/images/pizzeria-thumb.jpg`
 
 ## main.js
-
+* added `'use strict'`
+* (css) added `transform: translateZ(0)` and `will-change: left` to pizza movers
+* used `document.getElementById` and `document.getElementsByClassName` where appropriate since they are faster than `document.querySelector` and `document.querySelectorAll`
+* updated for loops to not create additional variables per iteration where appropriate
+* cache DOM node references so that fewer lookups need to be made
+* generate number of '.mover' pizzas based on the size of the container square and the height and width of the viewport
+* regenerate pizzas on window resize
 * updated `updatePositions` function to not force layout / reflow by moving `scrollTop` check out of `for` loop
 * updated `scroll` listener to call it's callback inside of `requestAnimationFrame`
 * updated `determineDx` signature to `(oldSize, size, windowWidth)` where before it was `(elem, size)`. Accordingly I updated `changePizzaSizes` to calculate `oldWidth, windowWidth, and oldSize` once each before entering the `for` loop which in turn calls `determineDx`. This change prevent another force reflow / layout issue.
