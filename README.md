@@ -1,5 +1,5 @@
 ## View on github pages
-https://davidandrus.github.io/frontend-nanodegree-mobile-portfolio/
+https://davidandrus.github.io/frontend-nanodegree-mobile-portfolio/index.html
 
 ## Running Locally
 
