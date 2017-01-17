@@ -515,8 +515,6 @@ function updatePositions() {
   }
 }
 
-
-
 var movers;
 function createAndUpdateMovers() {
   // clear if populated - happens during resize
@@ -546,7 +544,7 @@ function createAndUpdateMovers() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', function(x) {
+window.addEventListener('scroll', function() {
   requestAnimationFrame(updatePositions);
 });
 
