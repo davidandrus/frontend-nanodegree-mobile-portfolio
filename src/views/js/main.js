@@ -515,38 +515,18 @@ function updatePositions() {
   }
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', function(x) {
-  requestAnimationFrame(updatePositions);
-});
 
 
 var movers;
-var randomPizza;
-var pizzasDiv;
-var pizzaSize;
-
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
+function createAndUpdateMovers() {
+  // clear if populated - happens during resize
+  movingPizzas.innerHTML = '';
   var bodyWidth = document.body.offsetWidth;
   var bodyHeight = document.body.offsetWidth;
-  var movingPizzas = document.getElementById("movingPizzas1");
-
-  // cache for later function calls
-  randomPizza = document.getElementsByClassName("randomPizzaContainer");
-  pizzasDiv = document.getElementById("randomPizzas");
-  pizzaSize = document.getElementById("pizzaSize");
-
-
   var s = 256;
   var cols = Math.ceil(bodyWidth / s);
   var rows = Math.ceil(bodyHeight / s)
   var pizzaCount = rows * cols;
-
-  // This for-loop actually creates and appends all of the pizzas when the page loads
-  for (var i = 2; i < 100; i++) {
-    pizzasDiv.appendChild(pizzaElementGenerator(i));
-  }
 
   for (var i = 0, elem; i < pizzaCount ; i++) {
     elem = document.createElement('img');
@@ -563,4 +543,36 @@ document.addEventListener('DOMContentLoaded', function() {
   movers = document.getElementsByClassName('mover');
 
   updatePositions();
+}
+
+// runs updatePositions on scroll
+window.addEventListener('scroll', function(x) {
+  requestAnimationFrame(updatePositions);
+});
+
+window.addEventListener('resize', function() {
+  createAndUpdateMovers();
+});
+
+
+var randomPizza;
+var pizzasDiv;
+var pizzaSize;
+var movingPizzas;
+
+// Generates the sliding pizzas when the page loads.
+document.addEventListener('DOMContentLoaded', function() {
+  movingPizzas = document.getElementById("movingPizzas1");
+
+  // cache for later function calls
+  randomPizza = document.getElementsByClassName("randomPizzaContainer");
+  pizzasDiv = document.getElementById("randomPizzas");
+  pizzaSize = document.getElementById("pizzaSize");
+
+  // This for-loop actually creates and appends all of the pizzas when the page loads
+  for (var i = 2; i < 100; i++) {
+    pizzasDiv.appendChild(pizzaElementGenerator(i));
+  }
+
+  createAndUpdateMovers();
 });
